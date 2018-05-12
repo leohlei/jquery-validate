@@ -1,6 +1,8 @@
 # jquery-validate
 基于jquery实现的表单验证插件
+
 可自定义校验规则
+
 例如：模板定义
 <input type="text" class="form-control" name="username"
        data-bv-required="true" 
