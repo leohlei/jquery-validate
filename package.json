@@ -1,0 +1,20 @@
+{
+  "name": "jequery-validate",
+  "version": "1.0.0",
+  "description": "基于jequery的表单验证",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.1.1"
+  },
+  "devDependencies": {
+    "jquery": "^3.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jquery"
+  ],
+  "author": "jjhuang",
+  "license": "ISC"
+}

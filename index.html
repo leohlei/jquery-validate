@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jequery-validate</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .validater{
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 20px 30%;
+        }
+        .form-horizontal{
+            padding: 10px;
+        }
+        .form-control~p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="validater">
+        <form id="enableForm" method="post" class="form-horizontal text-center">
+            <div class="form-group row">
+                <label class="col-lg-3 control-label">name</label>
+                <div class="col-lg-7">
+                    <input type="text" class="form-control" name="username"
+                        data-bv-required="true" 
+                        data-bv-required-message="The username is required and cannot be empty"
+                        data-bv-regex="^[a-zA-Z0-9]+$"
+                        data-bv-regex-message="The username can only consist of alphabetical,number"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 control-label">email</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" name="email" 
+                        data-bv-required="true" 
+                        data-bv-required-message="The email is required and cannot be empty"
+                        data-bv-email="true"
+                        data-bv-email-message="The email is not a valid emial address"
+                    />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 control-label">websit</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" name="url" 
+                    autocomplete="off"
+                    data-bv-required="true" 
+                    data-bv-required-message="The url is required and cannot be empty"
+                    data-bv-url="true"
+                    data-bv-url-message="The url is not a valid url address"
+                    />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 control-label">Age</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" name="age" 
+                        data-bv-required="true" 
+                        data-bv-required-message="The age is required and cannot be empty"
+                        data-bv-greaterthan="10"
+                        data-bv-greaterthan-message="The age must greater than or equal to 10"
+                        data-bv-lessthan="100"
+                        data-bv-lessthan-message="The age must less than 100"
+                    />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-5 col-sm-offset-3">
+                    <button type="submit" class="btn btn-default">submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#enableForm').mValidator({
+                trigger: 'keyup'
+            })
+        })
+    </script>
+</body>
+
+</html>
